@@ -275,10 +275,14 @@ function Hero() {
 /* ─── About ──────────────────────────────────────────────────── */
 function About() {
   const details = [
-    { icon: <MapPin size={15} />,         label: "Location",          value: "San Francisco, CA"                        },
-    { icon: <GraduationCap size={15} />,  label: "Education",         value: "M.S. Computer Science, Stanford"          },
-    { icon: <Briefcase size={15} />,      label: "Currently",         value: "Senior ML Engineer at TechCorp"           },
-    { icon: <FlaskConical size={15} />,   label: "Research Interests",value: "Efficient fine-tuning, multimodal, RLHF"  },
+    { icon: <MapPin size={15} />,         label: "Location",          value: "Dubai, UAE"                        },
+    { icon: <GraduationCap size={15} />,  label: "Education",         value: "Computer Science and Engineering, BTech ,Governemnt Engineering College, Palakkad" },
+    { icon: <Briefcase size={15} />,      label: "Currently",         value: "AI/ML Engineer"       },
+   {
+  icon: <FlaskConical size={15} />,
+  label: "Research Interests",
+  value: "Agentic AI, Large Language Models (LLMs), RAG, Multi-Agent Systems, MLOps"
+},
     { icon: <Mail size={15} />,           label: "Email",             value: "mrsophiya@gmail.com"                        },
   ];
 
@@ -297,27 +301,33 @@ function About() {
           gap: 80, marginTop: 40,
         }}>
           {/* Bio */}
+         
           <div style={{ fontSize: 16, color: T.muted, lineHeight: 1.8 }}>
-            <p>
-              I'm a <strong style={{ color: T.text, fontWeight: 600 }}>Machine Learning
-              Engineer</strong> with a background in computer science and applied
-              mathematics. I specialise in building end-to-end ML systems — from data
-              ingestion and feature engineering to model training, evaluation, and
-              production deployment.
-            </p>
-            <p style={{ marginTop: 16 }}>
-              My core focus areas include{" "}
-              <strong style={{ color: T.text, fontWeight: 600 }}>NLP, computer vision,
-              and recommendation systems</strong>. I've shipped models processing
-              millions of data points daily for enterprise clients, with a relentless
-              focus on explainability, performance, and scalability.
-            </p>
-            <p style={{ marginTop: 16 }}>
-              When not building models, I contribute to open-source ML tooling and
-              write technical deep-dives on efficient fine-tuning, distributed
-              training, and inference optimisation.
-            </p>
-          </div>
+  <p>
+    I'm an <strong style={{ color: T.text, fontWeight: 600 }}>AI/ML Engineer</strong> with
+    <strong style={{ color: T.text, fontWeight: 600 }}> 5 years of software development experience</strong>
+    and <strong style={{ color: T.text, fontWeight: 600 }}>2 years of hands-on expertise in Artificial Intelligence, Machine Learning, and Data Science</strong>.
+    I specialize in designing and building end-to-end AI-powered applications, from data processing and model development to deploying scalable, production-ready intelligent systems.
+  </p>
+
+  <p style={{ marginTop: 16 }}>
+    My expertise includes
+    <strong style={{ color: T.text, fontWeight: 600 }}>
+      {" "}Machine Learning, Large Language Models (LLMs), Retrieval-Augmented Generation (RAG),
+      Agentic AI, Multi-Agent Systems, NLP, Recommendation Systems, and MLOps
+    </strong>.
+    I have experience developing AI agents, workflow automation solutions, intelligent APIs,
+    ETL pipelines, and cloud-native applications using technologies such as Python, FastAPI,
+    LangChain, LangGraph, Docker, Kubernetes, Airflow, and modern cloud platforms.
+  </p>
+
+  {/* <p style={{ marginTop: 16 }}>
+    I'm passionate about applying AI to solve real-world business challenges by automating
+    workflows, improving decision-making, and building scalable, business-focused solutions.
+    I enjoy transforming complex ideas into reliable AI products that create measurable impact
+    and drive innovation.
+  </p> */}
+</div>
 
           {/* Detail cards */}
           <div style={{ display: "flex", flexDirection: "column", gap: 14 }}>
@@ -344,14 +354,98 @@ function About() {
 
 /* ─── Skills ─────────────────────────────────────────────────── */
 function Skills() {
+  // const groups = [
+  //   { icon: <Cpu size={19} />,          title: "Machine Learning",  tags: ["PyTorch", "TensorFlow", "scikit-learn", "XGBoost", "JAX", "Keras"]         },
+  //   { icon: <MessageSquare size={19} />,title: "NLP & LLMs",        tags: ["Transformers", "HuggingFace", "LangChain", "LoRA / QLoRA", "RLHF", "RAG"]  },
+  //   { icon: <Eye size={19} />,          title: "Computer Vision",   tags: ["OpenCV", "YOLO", "ResNet", "ViT", "SAM", "Diffusion"]                      },
+  //   { icon: <Settings2 size={19} />,    title: "MLOps & Infra",     tags: ["MLflow", "Kubeflow", "Docker", "Kubernetes", "Airflow", "DVC"]              },
+  //   { icon: <Database size={19} />,     title: "Data & Cloud",      tags: ["AWS SageMaker", "GCP Vertex", "Spark", "BigQuery", "Snowflake", "dbt"]      },
+  //   { icon: <Code2 size={19} />,        title: "Languages",         tags: ["Python", "SQL", "Rust", "C++", "Bash", "Linux"]                            },
+  // ];
   const groups = [
-    { icon: <Cpu size={19} />,          title: "Machine Learning",  tags: ["PyTorch", "TensorFlow", "scikit-learn", "XGBoost", "JAX", "Keras"]         },
-    { icon: <MessageSquare size={19} />,title: "NLP & LLMs",        tags: ["Transformers", "HuggingFace", "LangChain", "LoRA / QLoRA", "RLHF", "RAG"]  },
-    { icon: <Eye size={19} />,          title: "Computer Vision",   tags: ["OpenCV", "YOLO", "ResNet", "ViT", "SAM", "Diffusion"]                      },
-    { icon: <Settings2 size={19} />,    title: "MLOps & Infra",     tags: ["MLflow", "Kubeflow", "Docker", "Kubernetes", "Airflow", "DVC"]              },
-    { icon: <Database size={19} />,     title: "Data & Cloud",      tags: ["AWS SageMaker", "GCP Vertex", "Spark", "BigQuery", "Snowflake", "dbt"]      },
-    { icon: <Code2 size={19} />,        title: "Languages",         tags: ["Python", "SQL", "Rust", "C++", "Bash", "Linux"]                            },
-  ];
+  {
+    icon: <Cpu size={19} />,
+    title: "Machine Learning & AI",
+    tags: [
+      "Scikit-learn",
+      "TensorFlow",
+      "PyTorch",
+      "Regression",
+      "Classification",
+      "Clustering",
+      "Time Series",
+      "NLP"
+    ]
+  },
+  {
+    icon: <MessageSquare size={19} />,
+    title: "LLMs & Agentic AI",
+    tags: [
+      "LangChain",
+      "LangGraph",
+      "MCP",
+      "RAG",
+      "AI Agents",
+      "Multi-Agent Systems",
+      "Prompt Engineering",
+      "Hugging Face"
+    ]
+  },
+  {
+    icon: <Settings2 size={19} />,
+    title: "Backend & MLOps",
+    tags: [
+      "FastAPI",
+      "Docker",
+      "Kubernetes",
+      "Apache Airflow",
+      "CI/CD",
+      "REST APIs",
+      "Microservices",
+      "ML Pipelines"
+    ]
+  },
+  {
+    icon: <Database size={19} />,
+    title: "Data Engineering & Cloud",
+    tags: [
+      "Python",
+      "SQL",
+      "PySpark",
+      "ETL Pipelines",
+      "Azure",
+      "AWS",
+      "GCP",
+      "MySQL"
+    ]
+  },
+  {
+    icon: <BarChart3 size={19} />,
+    title: "Data Visualization",
+    tags: [
+      "Power BI",
+      "Power BI Service",
+      "Tableau",
+      "DAX",
+      "Matplotlib",
+      "Plotly"
+    ]
+  },
+  {
+    icon: <Code2 size={19} />,
+    title: "Programming & Tools",
+    tags: [
+      "Python",
+      "SQL",
+      "Git",
+      "GitHub",
+      "Linux",
+      "VS Code",
+      "Jupyter",
+      "Postman"
+    ]
+  }
+];
 
   return (
     <section id="skills" className="section-pad" style={{

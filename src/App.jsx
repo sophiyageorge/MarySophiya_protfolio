@@ -2,7 +2,7 @@ import { useState, useEffect } from "react";
 import {
   Mail, ExternalLink, MapPin,
   GraduationCap, Briefcase, FlaskConical, ArrowRight,
-  Code2, Eye, MessageSquare, Cpu, Database, Settings2,
+  Code2, Eye, MessageSquare, Cpu, Database, Settings2,BarChart3,
 } from "lucide-react";
 import { FaGithub, FaLinkedin } from "react-icons/fa";
 
@@ -205,12 +205,12 @@ function Nav() {
 
 /* ─── Hero ───────────────────────────────────────────────────── */
 function Hero() {
-  const stats = [
-    { value: "5+",    label: "Years Experience"     },
-    { value: "30+",   label: "ML Projects Deployed" },
-    { value: "12",    label: "Publications"          },
-    { value: "98.4%", label: "Best Model Accuracy"  },
-  ];
+ const stats = [
+  { value: "5+", label: "Years in Software Development" },
+  { value: "2+", label: "Years in AI & Data Science" },
+  { value: "10+", label: "AI & ML Projects" },
+  { value: "6+", label: "AI Agents & LLM Applications" },
+];
 
   return (
     <section id="home" className="section-pad" style={{
@@ -276,7 +276,7 @@ function Hero() {
 function About() {
   const details = [
     { icon: <MapPin size={15} />,         label: "Location",          value: "Dubai, UAE"                        },
-    { icon: <GraduationCap size={15} />,  label: "Education",         value: "Computer Science and Engineering, BTech ,Governemnt Engineering College, Palakkad" },
+    { icon: <GraduationCap size={15} />,  label: "Education",         value: "Computer Science and Engineering BTech | Governemnt Engineering College, Palakkad" },
     { icon: <Briefcase size={15} />,      label: "Currently",         value: "AI/ML Engineer"       },
    {
   icon: <FlaskConical size={15} />,
@@ -302,15 +302,24 @@ function About() {
         }}>
           {/* Bio */}
          
-          <div style={{ fontSize: 16, color: T.muted, lineHeight: 1.8 }}>
-  <p>
+      <div
+  style={{
+    fontSize: 16,
+    color: T.muted,
+    lineHeight: 1.9,
+    textAlign: "justify",
+    maxWidth: "800px",
+    margin: "0 auto",
+  }}
+>
+  <p style={{ marginBottom: 20 }}>
     I'm an <strong style={{ color: T.text, fontWeight: 600 }}>AI/ML Engineer</strong> with
     <strong style={{ color: T.text, fontWeight: 600 }}> 5 years of software development experience</strong>
     and <strong style={{ color: T.text, fontWeight: 600 }}>2 years of hands-on expertise in Artificial Intelligence, Machine Learning, and Data Science</strong>.
     I specialize in designing and building end-to-end AI-powered applications, from data processing and model development to deploying scalable, production-ready intelligent systems.
   </p>
 
-  <p style={{ marginTop: 16 }}>
+  <p>
     My expertise includes
     <strong style={{ color: T.text, fontWeight: 600 }}>
       {" "}Machine Learning, Large Language Models (LLMs), Retrieval-Augmented Generation (RAG),
@@ -320,32 +329,70 @@ function About() {
     ETL pipelines, and cloud-native applications using technologies such as Python, FastAPI,
     LangChain, LangGraph, Docker, Kubernetes, Airflow, and modern cloud platforms.
   </p>
-
-  {/* <p style={{ marginTop: 16 }}>
-    I'm passionate about applying AI to solve real-world business challenges by automating
-    workflows, improving decision-making, and building scalable, business-focused solutions.
-    I enjoy transforming complex ideas into reliable AI products that create measurable impact
-    and drive innovation.
-  </p> */}
 </div>
 
           {/* Detail cards */}
+        
           <div style={{ display: "flex", flexDirection: "column", gap: 14 }}>
-            {details.map(d => (
-              <div key={d.label} style={{ display: "flex", alignItems: "flex-start", gap: 14 }}>
-                <div style={{
-                  width: 36, height: 36, background: T.bgCard,
-                  border: `1px solid ${T.border}`, borderRadius: 8,
-                  display: "flex", alignItems: "center", justifyContent: "center",
-                  flexShrink: 0, color: T.accent,
-                }}>{d.icon}</div>
-                <div>
-                  <div style={{ fontSize: 12, color: T.muted, fontWeight: 500, marginBottom: 2 }}>{d.label}</div>
-                  <div style={{ fontSize: 14, color: T.text, fontWeight: 600 }}>{d.value}</div>
-                </div>
-              </div>
-            ))}
-          </div>
+  {details.map((d) => (
+    <div
+      key={d.label}
+      style={{
+        display: "flex",
+        alignItems: "center",
+        gap: 14,
+      }}
+    >
+      <div
+        style={{
+          width: 36,
+          height: 36,
+          background: T.bgCard,
+          border: `1px solid ${T.border}`,
+          borderRadius: 8,
+          display: "flex",
+          alignItems: "center",
+          justifyContent: "center",
+          flexShrink: 0,
+          color: T.accent,
+        }}
+      >
+        {d.icon}
+      </div>
+
+      <div
+        style={{
+          display: "grid",
+          gridTemplateColumns: "140px 1fr",
+          alignItems: "center",
+          width: "100%",
+          columnGap: 16,
+        }}
+      >
+        <div
+          style={{
+            fontSize: 12,
+            color: T.muted,
+            fontWeight: 500,
+          }}
+        >
+          {d.label}
+        </div>
+
+        <div
+          style={{
+            fontSize: 14,
+            color: T.text,
+            fontWeight: 600,
+            textAlign: "left",
+          }}
+        >
+          {d.value}
+        </div>
+      </div>
+    </div>
+  ))}
+</div>
         </div>
       </div>
     </div>
@@ -540,9 +587,9 @@ function Projects() {
             <Label>Projects</Label>
             <SectionTitle>Selected Work</SectionTitle>
           </div>
-          <a href="#" className="project-link">
-            All Projects <ArrowRight size={13} />
-          </a>
+          <a href="#projects" className="project-link">
+  All Projects <ArrowRight size={13} />
+</a>
         </div>
 
         {/* ── Featured Card ── */}
@@ -975,7 +1022,7 @@ function Footer() {
   const links = [
   {
     name: "Resume",
-    url: "https://drive.google.com/file/d/15Yi62F2WR-QzywjSD0efhD8wecSllF_s/view?usp=sharing",
+    url: "https://drive.google.com/file/d/1eILJiZJ3Z8BkpToXfpp8x_1q_uYpscHm/view?usp=sharing",
   },
   {
     name: "GitHub",
